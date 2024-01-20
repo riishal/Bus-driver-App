@@ -23,11 +23,11 @@ class _AddDriverScreenState extends State<AddDriverScreen> {
     return Scaffold(
         appBar: AppBar(
           elevation: 0,
-          bottom: PreferredSize(
-              child: SizedBox(), preferredSize: Size.fromHeight(15)),
-          backgroundColor: Color.fromRGBO(43, 43, 43, 1),
+          bottom: const PreferredSize(
+              preferredSize: Size.fromHeight(15), child: SizedBox()),
+          backgroundColor: const Color.fromRGBO(43, 43, 43, 1),
           centerTitle: true,
-          title: Text(
+          title: const Text(
             'Add Driver',
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
           ),
@@ -40,22 +40,22 @@ class _AddDriverScreenState extends State<AddDriverScreen> {
                 children: [
                   TextformWidget(
                       size: size, controller: nameController, hintText: 'name'),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   TextformWidget(
                       size: size,
                       controller: mobileController,
                       hintText: 'mobile Number'),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   TextformWidget(
                       size: size,
                       controller: licenseNoController,
                       hintText: 'license Number'),
-                  Expanded(
-                    child: const SizedBox(),
+                  const Expanded(
+                    child: SizedBox(),
                   ),
                   SizedBox(
                     height: size.height * 0.080,

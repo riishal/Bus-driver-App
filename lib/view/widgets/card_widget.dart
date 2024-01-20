@@ -18,6 +18,8 @@ class CardWidget extends StatelessWidget {
     return Container(
       height: 170,
       width: 170,
+      decoration:
+          BoxDecoration(borderRadius: BorderRadius.circular(10), color: color),
       child: Stack(
         children: [
           Positioned(
@@ -28,13 +30,13 @@ class CardWidget extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: TextStyle(
+                  style: const TextStyle(
                       color: Colors.white,
                       fontSize: 26,
                       fontWeight: FontWeight.w700),
                 ),
                 Text(subtitle,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.white,
                         fontSize: 12,
                         fontWeight: FontWeight.w400)),
@@ -48,8 +50,6 @@ class CardWidget extends StatelessWidget {
           ),
         ],
       ),
-      decoration:
-          BoxDecoration(borderRadius: BorderRadius.circular(10), color: color),
     );
   }
 }

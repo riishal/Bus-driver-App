@@ -18,11 +18,11 @@ class _DriversListScreenState extends State<DriversListScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        bottom: PreferredSize(
-            child: SizedBox(), preferredSize: Size.fromHeight(15)),
-        backgroundColor: Color.fromRGBO(43, 43, 43, 1),
+        bottom: const PreferredSize(
+            preferredSize: Size.fromHeight(15), child: SizedBox()),
+        backgroundColor: const Color.fromRGBO(43, 43, 43, 1),
         centerTitle: true,
-        title: Text(
+        title: const Text(
           'Driver List',
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
         ),
@@ -39,16 +39,17 @@ class _DriversListScreenState extends State<DriversListScreen> {
               if (snapshot.hasData) {
                 var driverslength = snapshot.data.drivers.length.toString();
                 return Container(
-                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                  margin:
+                      const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         '$driverslength Drivers Found',
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 13, fontWeight: FontWeight.w500),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Expanded(
@@ -58,7 +59,7 @@ class _DriversListScreenState extends State<DriversListScreen> {
                               return Container(
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                           color:
                                               Color.fromRGBO(193, 193, 193, 1))
@@ -66,26 +67,23 @@ class _DriversListScreenState extends State<DriversListScreen> {
                                     color: Colors.white,
                                     border: Border.all(
                                         width: 0.3,
-                                        color:
-                                            Color.fromRGBO(193, 193, 193, 1))),
+                                        color: const Color.fromRGBO(
+                                            193, 193, 193, 1))),
                                 child: ListTile(
                                   title: Text(driver.name),
                                   subtitle: Text(driver.licenseNo),
-                                  leading: Container(
-                                      // height: 60,
-                                      // color: Color.fromRGBO(193, 193, 193, 1),
-                                      child: Image.asset(
+                                  leading: Image.asset(
                                     'assets/images/img_ellipse.png',
                                     scale: 3,
-                                  )),
+                                  ),
                                   // leading: Text(driver.id.toString()),
                                   trailing: ElevatedButton(
                                     style: ElevatedButton.styleFrom(
                                       elevation: 0,
                                       backgroundColor:
-                                          Color.fromRGBO(252, 21, 59, 1),
+                                          const Color.fromRGBO(252, 21, 59, 1),
                                     ),
-                                    child: Text('Delete'),
+                                    child: const Text('Delete'),
                                     onPressed: () {
                                       context
                                           .read<BusProvider>()

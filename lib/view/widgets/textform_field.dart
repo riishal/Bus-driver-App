@@ -16,7 +16,7 @@ class TextformWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: Color.fromRGBO(42, 42, 42, 0.1),
+          color: const Color.fromRGBO(42, 42, 42, 0.1),
           borderRadius: BorderRadius.circular(12)),
       height: size.height * 0.084,
       width: size.width * 0.89,
@@ -28,7 +28,7 @@ class TextformWidget extends StatelessWidget {
             //   left: 120,
             // ),
             hintText: hintText,
-            border: OutlineInputBorder(borderSide: BorderSide.none),
+            border: const OutlineInputBorder(borderSide: BorderSide.none),
           )),
     );
   }

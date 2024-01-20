@@ -8,7 +8,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color.fromRGBO(252, 21, 59, 1),
+      backgroundColor: const Color.fromRGBO(252, 21, 59, 1),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -31,7 +31,7 @@ class SplashScreen extends StatelessWidget {
                   'Login',
                   style: TextStyle(
                       fontSize: 20,
-                      color: const Color.fromRGBO(252, 21, 59, 1),
+                      color: Color.fromRGBO(252, 21, 59, 1),
                       fontWeight: FontWeight.w500),
                 )),
           ),

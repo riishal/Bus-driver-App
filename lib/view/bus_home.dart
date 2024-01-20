@@ -26,20 +26,14 @@ class _BusHomeScreenState extends State<BusHomeScreen> {
     return Scaffold(
       appBar: AppBar(
           elevation: 0,
-          bottom: PreferredSize(
-              child: SizedBox(), preferredSize: Size.fromHeight(25)),
-          backgroundColor: Color.fromRGBO(43, 43, 43, 1),
+          bottom: const PreferredSize(
+              preferredSize: Size.fromHeight(25), child: SizedBox()),
+          backgroundColor: const Color.fromRGBO(43, 43, 43, 1),
           centerTitle: true,
           title: Image.asset(
             'assets/images/splash.png',
             scale: 1.5,
           )),
-      // floatingActionButton: FloatingActionButton.extended(
-      //     onPressed: () {
-      // Navigator.of(context).push(MaterialPageRoute(
-      //     builder: (context) => const DriversListScreen()));
-      //     },
-      //     label: const Text('Drivers List')),
       body: FutureBuilder(
           future: context.read<BusProvider>().getBusList(),
           builder: (context, snapshot) {
@@ -51,17 +45,17 @@ class _BusHomeScreenState extends State<BusHomeScreen> {
             if (snapshot.hasData) {
               var buses = snapshot.data.bus.length.toString();
               return Container(
-                margin: EdgeInsets.symmetric(horizontal: 15),
+                margin: const EdgeInsets.symmetric(horizontal: 15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CardWidget(
+                        const CardWidget(
                           color: Color.fromRGBO(252, 21, 59, 1),
                           title: 'Bus',
                           subtitle: 'Manage your Bus',
@@ -73,7 +67,7 @@ class _BusHomeScreenState extends State<BusHomeScreen> {
                                 builder: (context) =>
                                     const DriversListScreen()));
                           },
-                          child: CardWidget(
+                          child: const CardWidget(
                             color: Color.fromRGBO(43, 43, 43, 1),
                             title: 'Driver',
                             subtitle: 'Manage your Driver',
@@ -83,15 +77,15 @@ class _BusHomeScreenState extends State<BusHomeScreen> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Text(
                       '$buses Buses Found',
-                      style:
-                          TextStyle(fontWeight: FontWeight.w500, fontSize: 13),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w500, fontSize: 13),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Expanded(
@@ -101,31 +95,29 @@ class _BusHomeScreenState extends State<BusHomeScreen> {
                             return Container(
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  boxShadow: [
+                                  boxShadow: const [
                                     BoxShadow(
                                         color: Color.fromRGBO(193, 193, 193, 1))
                                   ],
                                   color: Colors.white,
                                   border: Border.all(
                                       width: 0.3,
-                                      color: Color.fromRGBO(193, 193, 193, 1))),
+                                      color: const Color.fromRGBO(
+                                          193, 193, 193, 1))),
                               child: ListTile(
-                                leading: Container(
-                                    // height: 60,
-                                    // color: Color.fromRGBO(193, 193, 193, 1),
-                                    child: Image.asset(
+                                leading: Image.asset(
                                   'assets/images/img_image_3.png',
                                   scale: 3,
-                                )),
+                                ),
                                 title: Text(
                                   bus.name,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontSize: 12,
                                       fontWeight: FontWeight.w500),
                                 ),
                                 subtitle: Text(
                                   bus.type,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontSize: 12,
                                       fontWeight: FontWeight.w500),
                                 ),
@@ -133,7 +125,7 @@ class _BusHomeScreenState extends State<BusHomeScreen> {
                                     style: ElevatedButton.styleFrom(
                                       elevation: 0,
                                       backgroundColor:
-                                          Color.fromRGBO(252, 21, 59, 1),
+                                          const Color.fromRGBO(252, 21, 59, 1),
                                     ),
                                     onPressed: () {
                                       setState(() {
@@ -147,7 +139,7 @@ class _BusHomeScreenState extends State<BusHomeScreen> {
                                                 index: index, data: bus),
                                           ));
                                     },
-                                    child: Text('Manage')),
+                                    child: const Text('Manage')),
                               ),
                             );
                           },
